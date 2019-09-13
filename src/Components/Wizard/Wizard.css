@@ -1,0 +1,24 @@
+.wizard-container {
+    width: 50vw;
+    height: 100vh;
+    color: black;
+    background: #E5F4EC;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.wizard-title {
+    width: 50%;
+    height: 5vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.wizard-inputs {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}

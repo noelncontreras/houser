@@ -1,0 +1,9 @@
+.house-listing {
+    width: 25vw;
+    height: 50vh;
+    background: #DEDEDE;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+}

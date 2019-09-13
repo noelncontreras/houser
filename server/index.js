@@ -2,8 +2,8 @@ require("dotenv").config();
 const express = require("express");
 const app = express();
 const massive = require("massive");
-//CONTROLLERS GO HERE
-
+//CONTROLLER(S) GO HERE
+const controller = require("./controller");
 
 const {CONNECTION_STRING, SERVER_PORT} = process.env;
 
@@ -25,6 +25,8 @@ massive(CONNECTION_STRING).then(dbInstance => {
 // }))
 
 //ENDPOINTS GO HERE
+//get list of all houses to render in Dashboard.js endpoint
+app.get("/api/houses", controller.getAllHouses)
 
 app.listen(SERVER_PORT, () => {
     console.log(`Listening on port ${SERVER_PORT}`)
