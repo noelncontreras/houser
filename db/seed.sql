@@ -15,3 +15,9 @@ VALUES
 ('Mansion', '89 S 300 E', 'Richfield', 'UT', 82335),
 ('Triplex', '5906 N 23949 W', 'Salt Lake City', 'UT', 84349),
 ('Single Family', '123234 S State St.', 'Salt Lake City', 'UT', 82381);
+
+--ALTER TABLE TO ADD IMAGE, MONTHLY MORTGAGE AMOUNT, AND DESIRED RENT
+ALTER TABLE houses
+ADD COLUMN image TEXT,
+ADD COLUMN monthly_mortgage_amount INTEGER,
+ADD COLUMN desired_rent INTEGER;

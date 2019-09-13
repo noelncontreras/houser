@@ -21,6 +21,17 @@ export default class Dashboard extends Component {
             .catch(error => alert(`You have CDM ${error}`))
     };
 
+    handleDelete = id => {
+        axios
+            .delete(`/api/house/${id}`);
+        axios
+            .get("/api/houses")
+            .then(response => {
+                this.setState({houses: response.data})
+            })
+            .catch(error => alert(`You have a HanDel ${error}`))
+    }
+
     render() {
         const housesMapped = this.state.houses.map(house => {
             return (
@@ -31,14 +42,15 @@ export default class Dashboard extends Component {
                 city={house.city}
                 state={house.state}
                 zip={house.zip}
-                key={house.house_id} />
+                key={house.house_id} 
+                handleDelete={this.handleDelete}/>
             )
         })
         return (
             <section className = "dashboard-container">
                 <div className = "dashboard-title">
                     <h1>Dashboard</h1>
-                    <Link to="/wizard"><button>Add New Property</button></Link>
+                    <Link to="/wizard/step1"><button>Add New Property</button></Link>
                 </div>
                 <div>
                     {housesMapped}

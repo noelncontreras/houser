@@ -12,7 +12,7 @@ export default function House(props) {
                 <h6>{props.state}</h6>
                 <h6>{props.zip}</h6>
                 <br />
-                <button>Cancel</button>
+                <button onClick={() => props.handleDelete(props.id)}>Delete</button>
             </div>
             <br />
         </>

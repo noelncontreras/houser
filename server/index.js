@@ -25,8 +25,12 @@ massive(CONNECTION_STRING).then(dbInstance => {
 // }))
 
 //ENDPOINTS GO HERE
-//get list of all houses to render in Dashboard.js endpoint
-app.get("/api/houses", controller.getAllHouses)
+//GET request to get list of all houses to render in Dashboard.js endpoint
+app.get("/api/houses", controller.getAllHouses);
+//POST request to add a new house to house list from front-end to back-end(DB)
+app.post("/api/house", controller.addNewHouse);
+//DELETE request to delete house from list and DB
+app.delete("/api/house/:id", controller.deleteHouse);
 
 app.listen(SERVER_PORT, () => {
     console.log(`Listening on port ${SERVER_PORT}`)
